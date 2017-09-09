@@ -148,6 +148,9 @@ public class SelectPictureActivity extends AppCompatActivity {
         String fileName = type == 1 ? "JPEG_" + timeStamp + "_" : "VID_" + timeStamp + "_";
         File storageDir = Environment.getExternalStoragePublicDirectory(
                 type == 1 ? Environment.DIRECTORY_PICTURES : Environment.DIRECTORY_MOVIES);
+
+        storageDir.mkdirs();
+
         File file = File.createTempFile(
                 fileName,  /* prefix */
                 type == 1 ? ".jpg" : ".mp4",         /* suffix */
